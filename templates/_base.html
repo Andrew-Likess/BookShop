@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title %}{% endblock title %}
+    {% block style %}{% endblock style %}
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+
+</head>
+<body>
+
+    <div id="app">
+        {% block header %}{% endblock header %}
+        {% block main %}{% endblock main %}
+        {% block footer %}{% endblock footer %}
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+

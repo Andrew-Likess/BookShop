@@ -1,0 +1,34 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+    Application
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'BookItems/style.css' %}" />
+{% endblock style %}
+
+{% block header %}
+    <nav>
+        <li>Home</li>
+        <li>Categories</li>
+        <li>About</li>
+    </nav>
+{% endblock header %}
+
+{% block main %}
+  <h1>Books</h1>
+  <ul class="book-list">
+    {% for book in books %}
+      <li class="book-list-item">
+        <img src="{{ book.image }}" alt="{{ book.name }}" class="book-image" />
+        <div class="book-details">
+          <h2 class="book-title">{{ book.name }}</h2>
+          <p class="book-author">Author: {{ book.author.name }} {{ book.author.surname }}</p>
+          <p class="book-price">Price: ${{ book.price }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock main %}
